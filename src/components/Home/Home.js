@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import img from '../../img.png'
 
 const View = styled.div`
 
