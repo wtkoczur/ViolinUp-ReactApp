@@ -1,7 +1,7 @@
 //import { useEffect, useState } from "react";
 //import BlogPost from "./BlogPost";
 import Photo from "./Photo";
-import { BlogLayout, BlogList, BlogPosts, Post, MyLinks, AuthorData, AuthorLogo, Excerpt, MiniPhoto, BlogListElement, BlogListElementData, BlogListElementDate, BlogListElementLink} from "./style";
+import { BlogLayout, BlogList, BlogPosts, Post, MyLinks, AuthorData, AuthorLogo, Excerpt, MiniPhoto, BlogListElement, BlogListElementData, BlogListElementDate, BlogListElementLink, MyButton} from "./style";
 //import { getPosts } from "../../services";
 //import { Link, Route, Routes} from "react-router-dom";
 //import SinglePost from "./SinglePost";
@@ -88,7 +88,9 @@ const Blog = ({ blogs }) => {
                             <Excerpt>
                                 {e.node.excerpt}
                             </Excerpt>
-
+                            <MyButton to={`/blog/${e.node.slug}`}>
+                                    <span>Czytaj dalej</span>
+                            </MyButton>
                         </ Post>
                     ))}
                 </BlogPosts>

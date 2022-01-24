@@ -24,7 +24,6 @@ export const BlogList = styled.section`
     @media (max-width: 768px) {
         display: none
     }
-
 `
 export const MiniPhoto = styled.img`
     width: 50px;
@@ -37,7 +36,6 @@ export const BlogListElement = styled.div`
     grid-template-columns: 1fr 5fr;
     grid-gap: 15px;
     margin-bottom: 20px
-
 `
 
 export const BlogListElementData = styled.div`
@@ -130,8 +128,9 @@ export const AddComment = styled.button`
 export const MyLinks = styled(Link)`
     text-decoration: none;
     color: black;
+    transition: 0.7s;
         &:hover{
-            color: #525252
+            color: #525252;
         }
 `
 
@@ -141,6 +140,9 @@ export const BlogPhoto = styled.div`
     overflow: hidden;
     border-radius: 5px;
     margin: 10px auto;
+    -webkit-box-shadow: 0px 0px 7px 0px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 0px 7px 0px rgba(66, 68, 90, 1);
+    box-shadow: 0px 0px 7px 0px rgba(66, 68, 90, 1);
 `
 export const AuthorData = styled.div`
     display: flex;
@@ -157,4 +159,11 @@ export const AuthorLogo = styled.img`
 `
 
 
-
+export const MyButton = styled.button`
+    border-radius: 10px;
+    border: none;
+    padding: 8px 10px;
+    transition: transform 600ms;
+        &:hover {
+        transform: translateY(-10px);
+`
