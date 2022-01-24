@@ -7,6 +7,8 @@ export const Nav = styled.div`
     background-color: transparent;
     padding: 20px;
     text-align: end;
+    display: flex;
+    justify-content: space-between
 `;
 
 
@@ -24,12 +26,15 @@ export const StyledLink = styled(Link)`
 const NavMenu = () => {
     return(
     <Nav>
-        <img src={logo} alt="logo" style={{height: "40px", width: "auto", marginTop: "-10px", marginRight: "600px"}}/>
-        <StyledLink to="/">Home</StyledLink>
+        <img src={logo} alt="logo" style={{height: "40px", width: "auto", marginTop: "-10px"}}/>
+        <div>
+             <StyledLink to="/">Home</StyledLink>
         {/* <StyledLink to="/violin">Skrzypce</StyledLink> */}
         <StyledLink to="/shop">Instrumenty</StyledLink>
         <StyledLink to="/blog">Blog</StyledLink>
         <StyledLink to="/about">About</StyledLink>
+        </div>
+       
     </Nav>
     )
 }

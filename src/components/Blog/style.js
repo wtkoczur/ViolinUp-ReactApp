@@ -5,16 +5,25 @@ export const BlogLayout = styled.div`
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-gap: 20px;
+    @media (max-width: 1100px) {
+        grid-template-columns: 6fr 3fr;
+    }
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
 `
 
 export const BlogList = styled.section`
     padding: 10 px 10px;
     background-color: rgba(227, 227, 227, 0.9);
     margin: 10px;
-    height: 400px;
+    height: 500px;
     border-radius: 8px;
     text-align: start;
-    padding: 20px
+    padding: 20px;
+    @media (max-width: 768px) {
+        display: none
+    }
 
 `
 export const MiniPhoto = styled.img`

@@ -33,6 +33,9 @@ const Content = styled.div`
   width: 95%;
   justify-content: center;
   margin: 0px auto;
+  @media (min-width: 1400px) {
+    width: 70%
+  }
   `
 
 
