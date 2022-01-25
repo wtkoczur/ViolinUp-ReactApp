@@ -197,7 +197,8 @@ export const MyButton = styled.button`
     border-radius: 10px;
     border: none;
     padding: 8px 10px;
-    transition: transform 600ms;
         &:hover {
-        transform: translateY(-10px);
+            transition: 600ms;
+            transform: translateY(-10px);
+            color: red
 `

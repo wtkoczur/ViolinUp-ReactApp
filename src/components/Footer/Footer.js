@@ -10,7 +10,12 @@ const FooterContent = styled.div`
 const FooterElement = styled.span`
     font-size: 20px;
     font-weight: 700;
-    margin: 30px
+    margin: 30px;
+        @media (max-width: 600px) {
+            margin: 5px;
+            font-size: 15px;
+        }
+
 `
 
 
