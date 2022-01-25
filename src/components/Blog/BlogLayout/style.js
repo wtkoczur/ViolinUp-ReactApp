@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { lightBlue } from "../../../style";
 
 export const BlogLayout = styled.div`
     display: grid;
@@ -12,7 +13,6 @@ export const BlogLayout = styled.div`
         grid-template-columns: 1fr;
     }
 `
-
 
 export const BlogList = styled.section`
     padding: 10 px 10px;
@@ -57,7 +57,6 @@ export const BlogListElementLink = styled(Link)`
     }
 `
 
-
 export const BlogPosts = styled.section`
     padding: 10px;
 
@@ -80,7 +79,6 @@ export const Post = styled.div`
     padding-bottom: 20px
 `
 
-
 export const Excerpt = styled.div`
     margin: 30px auto;
     width: 70%;
@@ -92,51 +90,11 @@ export const Excerpt = styled.div`
 `
 
 
-export const SingleBlogPost = styled.div`
-    box-sizing: border-box;
-    width: 80%;
-    color: black;
-    font-size: 17px;
-    text-align: start;
-    padding: 20px;
-    border: 2px solid #bbb;
-    border-radius: 8px;
-    background-color: #ffffff;
-    margin: 10px auto;
-    padding-bottom:20px;
-        @media (max-width: 700px) {
-            width: 95%;
-        }
-`
-export const SingleBlogPostContent = styled.div`
-
-`
-
-
 export const Author = styled.p`
     text-align: end;
     font-size: 12px
 `
 
-export const Form = styled.form`
-    margin: 10px;
-    text-align: end
-`
-
-export const Inp = styled.input`
-    border-radius: 5px;
-    border: 1px solid #222;
-    width: 50%;
-    margin: 10px
-`
-
-export const AddComment = styled.button`
-    background-color: transparent;
-    border: none;
-        &:hover{
-            color: blue
-        }
-`
 
 export const MyLinks = styled(Link)`
     text-decoration: none;
@@ -146,25 +104,6 @@ export const MyLinks = styled(Link)`
             color: #525252;
         }
 `
-
-export const MyBackLinks = styled(Link)`
-    text-decoration: none;
-`
-
-export const MyBackLinksIcon = styled.button`
-font-size: 16px;
-    background-color: transparent;
-    color: #4178fa;
-    border-radius: 10px;
-    border: none;
-    padding: 8px 10px;
-    margin-left: 10px;
-        &:hover {
-            transition: 800ms;
-            color: #001775;
-            transform: translateX(-10px);
-`
-
 
 export const BlogPhoto = styled.div`
     width: 95%;
@@ -179,6 +118,7 @@ export const BlogPhoto = styled.div`
             height: 180px
         }
 `
+
 export const AuthorData = styled.div`
     display: flex;
     justify-content: center;
@@ -189,8 +129,7 @@ export const AuthorData = styled.div`
 export const AuthorLogo = styled.img`
     width: 30px;
     height: auto;
-    margin-right: 10px
-
+    margin-right: 10px;
 `
 
 export const MyButton = styled.button`
@@ -200,5 +139,5 @@ export const MyButton = styled.button`
         &:hover {
             transition: 600ms;
             transform: translateY(-10px);
-            color: red
+            color: ${lightBlue}
 `

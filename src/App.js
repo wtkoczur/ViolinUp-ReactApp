@@ -6,38 +6,14 @@ import NotFound from "./components/NotFound/NotFound";
 import Violin from "./components/Violin/Violin";
 import NavMenu from './components/NavMenu/NavMenu';
 import Shop from './components/Shop/Shop';
-import Blog from "./components/Blog/Blog";
+import Blog from "./components/Blog/BlogLayout/Blog";
 import About from "./components/About/About";
-import styled from "styled-components";
 import Footer from "./components/Footer/Footer";
-import img from './img/7.png'
-import SinglePost from "./components/Blog/SinglePost";
+import SinglePost from "./components/Blog/SinglePost/SinglePost";
 import { myPost } from "./services";
+import { MainView, Container, Content } from './style';
 
 
-const MainView = styled.div`
-  background-image: url(${img});
-  text-align: center;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-
-  `;
-
-  const Container = styled.div`
-  display: flex;
-  min-height: 100vh
-  `;
-
-const Content = styled.div`
-  width: 95%;
-  justify-content: center;
-  margin: 0px auto;
-  @media (min-width: 1400px) {
-    width: 70%
-  }
-  `
  const fetchData = 'https://api-eu-central-1.graphcms.com/v2/ckyh3bg361r2h01z02bzd2qoc/master'
   //const graphqlAPI = process.env.PUBLIC_GRAPHCMS_ENDPOINT;
 

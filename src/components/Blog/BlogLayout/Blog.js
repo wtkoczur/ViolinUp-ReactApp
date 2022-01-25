@@ -1,73 +1,17 @@
-//import { useEffect, useState } from "react";
-//import BlogPost from "./BlogPost";
-import Photo from "./Photo";
+
+import Photo from "../Photo/Photo";
 import { BlogLayout, BlogList, BlogPosts, Post, MyLinks, AuthorData, AuthorLogo, Excerpt, MiniPhoto, BlogListElement, BlogListElementData, BlogListElementDate, BlogListElementLink, MyButton} from "./style";
 //import { getPosts } from "../../services";
-//import { Link, Route, Routes} from "react-router-dom";
-//import SinglePost from "./SinglePost";
 import moment from 'moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarWeek } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core'
 
 
-
-
-
-
 const Blog = ({ blogs }) => {
-    // const [ blogs, setBlogs ] = useState([]);
-
-    // useEffect(() => {
-    //     fetch('https://api-eu-central-1.graphcms.com/v2/ckyh3bg361r2h01z02bzd2qoc/master', {
-    //         method: "POST",
-    //         headers: { "Content-Type": "application/json" },
-    //         body: JSON.stringify({
-    //             query: `
-    //             query MyQuery {
-    //                 postsConnection {
-    //                   edges {
-    //                     node {
-    //                       author {
-    //                         bio
-    //                         name
-    //                         id
-    //                         photo {
-    //                           url
-    //                         }
-    //                       }
-    //                       createdAt
-    //                       slug
-    //                       title
-    //                       excerpt
-    //                       featuredImage {
-    //                         url
-    //                       }
-    //                       categories {
-    //                         name
-    //                         slug
-    //                       }
-    //                       content {
-    //                         text
-    //                       }
-    //                     }
-    //                   }
-    //                 }
-    //               }
-    //             ` })
-    //         })
-    //         .then(res => {
-    //             return res.json();
-    //         })
-    //         .then(data => {
-    //             console.log(data.data.postsConnection.edges);
-    //             setBlogs(data.data.postsConnection.edges);
-    //         })
-    //     },[])
 
  return(
         <div>
-
             <BlogLayout>
                 <BlogPosts>
                     {blogs.map(e => (
@@ -109,11 +53,9 @@ const Blog = ({ blogs }) => {
                                     </BlogListElementDate>
                                 </BlogListElementData>
                             </BlogListElement>
-
                         </div>
                     ))}
                 </BlogList>
-
             </BlogLayout>
         </div>
 

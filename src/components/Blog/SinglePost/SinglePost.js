@@ -1,16 +1,16 @@
 import { Fragment } from "react";
 import { useParams } from "react-router-dom";
-import Photo from "./Photo";
+import Photo from "../Photo/Photo";
 import moment from "moment";
-import { SingleBlogPost, Form,Inp, AddComment, MyBackLinks, SingleBlogPostContent, AuthorData, AuthorLogo, MyBackLinksIcon } from "./style";
+import { SingleBlogPost, Form,Inp, AddComment, MyBackLinks, SingleBlogPostContent, MyBackLinksIcon } from "./style";
+import { AuthorData, AuthorLogo } from "../BlogLayout/style";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBackward, faCalendarWeek } from '@fortawesome/free-solid-svg-icons';
+import Bio from "../Bio/Bio";
 
 const SinglePost = ({ blogs }) => {
     const { blogId } = useParams();
     const { node } = blogs.find((post) => post.node.slug === blogId);
-
-
 
     const getContentFragment = (index, text, obj, type) => {
         let modifiedText = text;
@@ -28,7 +28,6 @@ const SinglePost = ({ blogs }) => {
             modifiedText = (<u key={index}>{text}</u>);
           }
         }
-
         switch (type) {
           case 'heading-one':
             return <h1 key={index}>{modifiedText.map((item, i) => <Fragment key={i}>{item}</Fragment>)}</h1>;
@@ -54,39 +53,37 @@ const SinglePost = ({ blogs }) => {
             return modifiedText;
         }
       };
-
-
     return(
+      <>
         <SingleBlogPost>
-            <Photo node={node} />
-                <AuthorData>
-                    <div style={{marginRight: "60px"}}>
-                        <AuthorLogo src={node.author.photo.url} alt="author"/>
-                        {node.author.name}
-                    </div>
-                    <FontAwesomeIcon style={{color: "#4178fa", margin: "0px 10px"}} icon={faCalendarWeek}></FontAwesomeIcon>
-                    {moment(node.createdAt).format('MMM DD, YYYY')}
-
-                </AuthorData>
-            <h1>{node.title}</h1>
-            <SingleBlogPostContent>
-                {node.content.raw.children.map((typeObj, index) => {
-                    const children = typeObj.children.map((item, itemIndex) => getContentFragment(itemIndex, item.text, item))
-
-                    return getContentFragment(index, children, typeObj, typeObj.type)
-                })}
-            </SingleBlogPostContent>
-            <Form>
-                <Inp type="text" placeholder='Dodaj komentarz' />
-                <AddComment>Dodaj</AddComment>
-            </Form>
-
-            <MyBackLinks to="/blog">
-                <MyBackLinksIcon>
-                        <FontAwesomeIcon icon={faBackward}></FontAwesomeIcon> Back to blogs
-                </MyBackLinksIcon>
-            </MyBackLinks>
-        </SingleBlogPost>
+              <Photo node={node} />
+                  <AuthorData>
+                      <div style={{marginRight: "60px"}}>
+                          <AuthorLogo src={node.author.photo.url} alt="author"/>
+                          {node.author.name}
+                      </div>
+                      <FontAwesomeIcon style={{color: "#4178fa", margin: "0px 10px"}} icon={faCalendarWeek}></FontAwesomeIcon>
+                      {moment(node.createdAt).format('MMM DD, YYYY')}
+                  </AuthorData>
+              <h1>{node.title}</h1>
+              <SingleBlogPostContent>
+                  {node.content.raw.children.map((typeObj, index) => {
+                      const children = typeObj.children.map((item, itemIndex) => getContentFragment(itemIndex, item.text, item))
+                      return getContentFragment(index, children, typeObj, typeObj.type)
+                  })}
+              </SingleBlogPostContent>
+              <Form>
+                  <Inp type="text" placeholder='Dodaj komentarz' />
+                  <AddComment>Dodaj</AddComment>
+              </Form>
+              <MyBackLinks to="/blog">
+                  <MyBackLinksIcon>
+                          <FontAwesomeIcon icon={faBackward}></FontAwesomeIcon> Back to blogs
+                  </MyBackLinksIcon>
+              </MyBackLinks>
+          </SingleBlogPost>
+          <Bio node={node}/>
+      </>
     )
 }
 

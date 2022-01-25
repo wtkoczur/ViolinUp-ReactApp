@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { lightBlue } from '../../style';
 
 export const Nav = styled.div`
 font-size: 20px;
@@ -20,7 +21,7 @@ margin: 20px;
 font-weight: 700;
 transition: transform 600ms;
     &:hover {
-        color: #05009e;
+        color: ${lightBlue};
 }
 `
 

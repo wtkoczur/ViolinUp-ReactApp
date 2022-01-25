@@ -1,28 +1,10 @@
-import styled from "styled-components";
-import { Fragment } from "react/cjs/react.production.min";
-
-const FooterContent = styled.div`
-    display: flex;
-    background-color: transparent;
-    justify-content: center;
-`
-
-const FooterElement = styled.span`
-    font-size: 20px;
-    font-weight: 700;
-    margin: 30px;
-        @media (max-width: 600px) {
-            margin: 5px;
-            font-size: 15px;
-        }
-
-`
+import { FooterElement, FooterContent } from './style';
 
 
 const Footer = () => {
     return(
         <FooterContent>
-            <FooterElement>Footer</FooterElement>
+            <FooterElement>Info</FooterElement>
             <FooterElement>/</FooterElement>
             <FooterElement>Instruments</FooterElement>
             <FooterElement>/</FooterElement>

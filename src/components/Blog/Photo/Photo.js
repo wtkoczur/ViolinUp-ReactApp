@@ -1,4 +1,4 @@
-import { BlogPhoto } from "./style";
+import { BlogPhoto } from "../BlogLayout/style";
 
 const Photo = ({ node }) => {
     return(
