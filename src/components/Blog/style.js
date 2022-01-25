@@ -13,6 +13,7 @@ export const BlogLayout = styled.div`
     }
 `
 
+
 export const BlogList = styled.section`
     padding: 10 px 10px;
     background-color: rgba(227, 227, 227, 0.9);
@@ -100,7 +101,7 @@ export const SingleBlogPost = styled.div`
     padding-bottom:20px
 `
 export const SingleBlogPostContent = styled.div`
-    
+
 `
 
 
@@ -148,6 +149,9 @@ export const BlogPhoto = styled.div`
     -webkit-box-shadow: 0px 0px 7px 0px rgba(66, 68, 90, 1);
     -moz-box-shadow: 0px 0px 7px 0px rgba(66, 68, 90, 1);
     box-shadow: 0px 0px 7px 0px rgba(66, 68, 90, 1);
+        @media (max-width: 600px) {
+            height: 180px
+        }
 `
 export const AuthorData = styled.div`
     display: flex;
@@ -162,7 +166,6 @@ export const AuthorLogo = styled.img`
     margin-right: 10px
 
 `
-
 
 export const MyButton = styled.button`
     border-radius: 10px;
