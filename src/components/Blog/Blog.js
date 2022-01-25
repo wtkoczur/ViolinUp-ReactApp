@@ -88,9 +88,11 @@ const Blog = ({ blogs }) => {
                             <Excerpt>
                                 {e.node.excerpt}
                             </Excerpt>
-                            <MyButton to={`/blog/${e.node.slug}`}>
-                                    <span>Czytaj dalej</span>
-                            </MyButton>
+                            <MyLinks to={`/blog/${e.node.slug}`}>
+                                    <MyButton>
+                                        Czytaj dalej
+                                    </MyButton>
+                            </MyLinks>
                         </ Post>
                     ))}
                 </BlogPosts>

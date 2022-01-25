@@ -91,7 +91,7 @@ export const SingleBlogPost = styled.div`
     width: 80%;
     color: black;
     font-size: 17px;
-    text-align: center;
+    text-align: start;
     padding: 10px;
     border: 2px solid #bbb;
     border-radius: 8px;
@@ -99,6 +99,11 @@ export const SingleBlogPost = styled.div`
     margin: 10px auto;
     padding-bottom:20px
 `
+export const SingleBlogPostContent = styled.div`
+    
+`
+
+
 
 export const Author = styled.p`
     text-align: end;
@@ -148,7 +153,7 @@ export const AuthorData = styled.div`
     display: flex;
     justify-content: center;
     font-size: 20px;
-    margin: 10px 0px
+    margin: 20px 0px
 `
 
 export const AuthorLogo = styled.img`

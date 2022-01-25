@@ -33,3 +33,41 @@ export const getPosts = async (category, slug) => {
 
     return result.violinUpsConnection.edges;
   };
+
+
+  export const myPost = `
+  query MyQuery {
+    postsConnection {
+      edges {
+        node {
+          author {
+            bio
+            name
+            id
+            photo {
+              url
+            }
+          }
+          createdAt
+          slug
+          title
+          excerpt
+          featuredImage {
+            url
+          }
+          categories {
+            name
+            slug
+          }
+          content {
+            text
+            html
+            markdown
+            raw
+          }
+        }
+      }
+    }
+  }
+  `;
+  

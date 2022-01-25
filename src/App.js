@@ -12,6 +12,7 @@ import styled from "styled-components";
 import Footer from "./components/Footer/Footer";
 import img from './img/7.png'
 import SinglePost from "./components/Blog/SinglePost";
+import { myPost } from "./services";
 
 
 const MainView = styled.div`
@@ -37,49 +38,18 @@ const Content = styled.div`
     width: 70%
   }
   `
-
-
+ const fetchData = 'https://api-eu-central-1.graphcms.com/v2/ckyh3bg361r2h01z02bzd2qoc/master'
+  //const graphqlAPI = process.env.PUBLIC_GRAPHCMS_ENDPOINT;
 
 function App() {
   const [ blogs, setBlogs ] = useState([]);
 
   useEffect(() => {
-      fetch('https://api-eu-central-1.graphcms.com/v2/ckyh3bg361r2h01z02bzd2qoc/master', {
+      fetch(fetchData, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-              query: `
-              query MyQuery {
-                  postsConnection {
-                    edges {
-                      node {
-                        author {
-                          bio
-                          name
-                          id
-                          photo {
-                            url
-                          }
-                        }
-                        createdAt
-                        slug
-                        title
-                        excerpt
-                        featuredImage {
-                          url
-                        }
-                        categories {
-                          name
-                          slug
-                        }
-                        content {
-                          text
-                        }
-                      }
-                    }
-                  }
-                }
-              ` })
+              query: myPost })
           })
           .then(res => {
               return res.json();
@@ -88,6 +58,7 @@ function App() {
               console.log(data.data.postsConnection.edges);
               setBlogs(data.data.postsConnection.edges);
           })
+
       },[])
 
 
