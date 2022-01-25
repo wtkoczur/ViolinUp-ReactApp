@@ -2,9 +2,9 @@ import { Fragment } from "react";
 import { useParams } from "react-router-dom";
 import Photo from "./Photo";
 import moment from "moment";
-import { SingleBlogPost, Form,Inp, AddComment, MyLinks, SingleBlogPostContent, AuthorData, AuthorLogo } from "./style";
+import { SingleBlogPost, Form,Inp, AddComment, MyBackLinks, SingleBlogPostContent, AuthorData, AuthorLogo, MyBackLinksIcon } from "./style";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarWeek } from '@fortawesome/free-solid-svg-icons';
+import { faBackward, faCalendarWeek } from '@fortawesome/free-solid-svg-icons';
 
 const SinglePost = ({ blogs }) => {
     const { blogId } = useParams();
@@ -81,7 +81,11 @@ const SinglePost = ({ blogs }) => {
                 <AddComment>Dodaj</AddComment>
             </Form>
 
-            <MyLinks to="/blog">Back to blogs</MyLinks>
+            <MyBackLinks to="/blog">
+                <MyBackLinksIcon>
+                        <FontAwesomeIcon icon={faBackward}></FontAwesomeIcon> Back to blogs
+                </MyBackLinksIcon>
+            </MyBackLinks>
         </SingleBlogPost>
     )
 }

@@ -62,9 +62,6 @@ function App() {
       },[])
 
 
-
-
-
   return (
     <MainView>
       <NavMenu />
