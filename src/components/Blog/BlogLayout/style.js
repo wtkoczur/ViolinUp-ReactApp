@@ -4,62 +4,19 @@ import { lightBlue } from "../../../style";
 
 export const BlogLayout = styled.div`
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 5fr 2fr;
     grid-gap: 20px;
     @media (max-width: 1100px) {
-        grid-template-columns: 6fr 3fr;
+        grid-template-columns: 2fr 1fr;
     }
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
     }
 `
 
-export const BlogList = styled.section`
-    padding: 10 px 10px;
-    background-color: rgba(227, 227, 227, 0.9);
-    margin: 10px;
-    height: 500px;
-    border-radius: 8px;
-    text-align: start;
-    padding: 20px;
-    @media (max-width: 768px) {
-        display: none
-    }
-`
-export const MiniPhoto = styled.img`
-    width: 50px;
-    height: 50px;
-    border-radius: 50px
-`
-
-export const BlogListElement = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    grid-gap: 15px;
-    margin-bottom: 20px
-`
-
-export const BlogListElementData = styled.div`
-    display: flex;
-    flex-flow: column;
-`
-
-export const BlogListElementDate = styled.div`
-    color: #949494
-`
-
-export const BlogListElementLink = styled(Link)`
-    text-decoration: none;
-    font-size: 20px;
-    color: black;
-            &:hover{
-        color: #525252
-    }
-`
-
 export const BlogPosts = styled.section`
     padding: 10px;
-
+    width: 90%;
 `
 
 export const BlogPost = styled.div`

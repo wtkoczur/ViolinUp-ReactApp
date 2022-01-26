@@ -3,7 +3,7 @@ import { lightBlue } from "../../../style";
 
 export const BioWrapper = styled.div`
     box-sizing: border-box;
-    width: 80%;
+    width: 90%;
     color: black;
     font-size: 17px;
     text-align: center;

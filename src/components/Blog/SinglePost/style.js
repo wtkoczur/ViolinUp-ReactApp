@@ -4,7 +4,7 @@ import { lightBlue } from "../../../style";
 
 export const SingleBlogPost = styled.div`
     box-sizing: border-box;
-    width: 80%;
+    width: 90%;
     color: black;
     font-size: 17px;
     text-align: start;
@@ -22,25 +22,6 @@ export const SingleBlogPostContent = styled.div`
 
 `
 
-export const Form = styled.form`
-    margin: 10px;
-    text-align: end
-`
-
-export const Inp = styled.input`
-    border-radius: 5px;
-    border: 1px solid #222;
-    width: 50%;
-    margin: 10px
-`
-
-export const AddComment = styled.button`
-    background-color: transparent;
-    border: none;
-        &:hover{
-            color: blue
-        }
-`
 
 export const MyBackLinks = styled(Link)`
     text-decoration: none;

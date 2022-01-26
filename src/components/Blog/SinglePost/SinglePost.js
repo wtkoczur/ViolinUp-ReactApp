@@ -2,11 +2,13 @@ import { Fragment } from "react";
 import { useParams } from "react-router-dom";
 import Photo from "../Photo/Photo";
 import moment from "moment";
-import { SingleBlogPost, Form,Inp, AddComment, MyBackLinks, SingleBlogPostContent, MyBackLinksIcon } from "./style";
-import { AuthorData, AuthorLogo } from "../BlogLayout/style";
+import { SingleBlogPost, MyBackLinks, SingleBlogPostContent, MyBackLinksIcon } from "./style";
+import { AuthorData, AuthorLogo, BlogLayout } from "../BlogLayout/style";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBackward, faCalendarWeek } from '@fortawesome/free-solid-svg-icons';
 import Bio from "../Bio/Bio";
+import Comments from "../Comments/Comments";
+import BlogList from "../BlogList/BlogList";
 
 const SinglePost = ({ blogs }) => {
     const { blogId } = useParams();
@@ -54,15 +56,14 @@ const SinglePost = ({ blogs }) => {
         }
       };
     return(
-      <>
-        <SingleBlogPost>
+      <BlogLayout>
+        <div>
+          <SingleBlogPost>
               <Photo node={node} />
                   <AuthorData>
-                      <div style={{marginRight: "60px"}}>
                           <AuthorLogo src={node.author.photo.url} alt="author"/>
                           {node.author.name}
-                      </div>
-                      <FontAwesomeIcon style={{color: "#4178fa", margin: "0px 10px"}} icon={faCalendarWeek}></FontAwesomeIcon>
+                      <FontAwesomeIcon style={{color: "#4178fa", margin: "0px 10px 0px 60px"}} icon={faCalendarWeek}></FontAwesomeIcon>
                       {moment(node.createdAt).format('MMM DD, YYYY')}
                   </AuthorData>
               <h1>{node.title}</h1>
@@ -72,10 +73,6 @@ const SinglePost = ({ blogs }) => {
                       return getContentFragment(index, children, typeObj, typeObj.type)
                   })}
               </SingleBlogPostContent>
-              <Form>
-                  <Inp type="text" placeholder='Dodaj komentarz' />
-                  <AddComment>Dodaj</AddComment>
-              </Form>
               <MyBackLinks to="/blog">
                   <MyBackLinksIcon>
                           <FontAwesomeIcon icon={faBackward}></FontAwesomeIcon> Back to blogs
@@ -83,7 +80,11 @@ const SinglePost = ({ blogs }) => {
               </MyBackLinks>
           </SingleBlogPost>
           <Bio node={node}/>
-      </>
+          <Comments />
+        </div>
+        
+          <BlogList blogs={blogs}/>
+      </BlogLayout>
     )
 }
 
